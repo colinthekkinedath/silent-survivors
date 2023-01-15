@@ -2,7 +2,7 @@ import React from "react";
 import Link from 'next/link'
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth, db } from "../firebase/firebaseApp";
-import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
+import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithRedirect } from "firebase/auth";
 
 
 const Navigation = () => {
@@ -11,7 +11,7 @@ const Navigation = () => {
   const provider = new GoogleAuthProvider();
   
   const signIn = async () => {
-    const result = await signInWithPopup(auth, provider)
+    const result = await signInWithRedirect(auth, provider)
     console.log(result.user)
   };
   
