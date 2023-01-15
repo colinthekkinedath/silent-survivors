@@ -14,10 +14,10 @@ const Dashboard = () => {
     const postsCollectionRef = collection(db, "post");
 
     
-    const deletePost = async (id) => {
-      const postDoc = doc(db, "posts", id);
-      await deleteDoc(postDoc);
-    }; 
+    // const deletePost = async (id) => {
+    //   const postDoc = doc(db, "posts", id);
+    //   await deleteDoc(postDoc);
+    // }; 
 
     useEffect(() => {
         const getPosts = async () => {
@@ -26,7 +26,7 @@ const Dashboard = () => {
         };
     
         getPosts();
-      }, [deletePost]);
+      });
 
 
 
@@ -62,9 +62,9 @@ const Dashboard = () => {
                   <div>
                     {user && post.author.id === auth.currentUser.uid && (
                       <button
-                        onClick={() => {
-                          deletePost(post.id);
-                        }}
+                        // onClick={() => {
+                        //   deletePost(post.id);
+                        // }}
                         className = "hover:bg-red-400 p-1 rounded-sm"
                       >
                         {"🗑️"}

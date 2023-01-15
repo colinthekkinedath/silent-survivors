@@ -18,9 +18,9 @@ const Navigation = () => {
   return(
     <div>
       <div className="flex space-x-12 justify-center pt-11">
-        <a className = "text-xl font-semibold text-gray-500 hover:text-gray-400" href = "/about">
+        <Link className = "text-xl font-semibold text-gray-500 hover:text-gray-400" href = "/about">
             About
-        </a>
+        </Link>
         <Link className = "text-xl font-semibold text-gray-500 hover:text-gray-400" href = "/dashboard">
             Feed
         </Link>
