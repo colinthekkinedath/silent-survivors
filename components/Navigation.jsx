@@ -7,7 +7,7 @@ const Navigation = () => {
         <a className = "text-xl font-semibold text-gray-500 hover:text-gray-400">
             Home
         </a>
-        <a className = "text-xl font-semibold text-gray-500 hover:text-gray-400">
+        <a className = "text-xl font-semibold text-gray-500 hover:text-gray-400" href = "/about">
             About
         </a>
 
