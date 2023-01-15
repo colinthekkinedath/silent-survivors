@@ -7,15 +7,17 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase/firebaseApp";
 import Date from './Date';
+
 const Dashboard = () => {
 
     const [postLists, setPostList] = useState([]);
     const postsCollectionRef = collection(db, "post");
-    const deletePost = async (id) => {
-        const postDoc = doc(db, "posts", id);
-        await deleteDoc(postDoc);
-    }; 
+
     
+    const deletePost = async (id) => {
+      const postDoc = doc(db, "posts", id);
+      await deleteDoc(postDoc);
+    }; 
 
     useEffect(() => {
         const getPosts = async () => {
@@ -25,6 +27,8 @@ const Dashboard = () => {
     
         getPosts();
       }, [deletePost]);
+
+
 
 
 
@@ -42,8 +46,10 @@ const Dashboard = () => {
 
     }
 
+
+
     return (
-        <div className = "px-12">
+        <div className = "flex flex-col justify-center px-44">
           {postLists.map((post) => {
             return (
               <div className = "flex-col justify-center p-7 drop-shadow-md rounded-xl hover:bg-gray-100">
@@ -59,6 +65,7 @@ const Dashboard = () => {
                         onClick={() => {
                           deletePost(post.id);
                         }}
+                        className = "hover:bg-red-400 p-1 rounded-sm"
                       >
                         {"🗑️"}
                       </button>
