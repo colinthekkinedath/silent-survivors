@@ -26,18 +26,18 @@ const CreatePost = () => {
             message,
             author: { name: auth.currentUser.displayName, id: auth.currentUser.uid },
             created: usDate,
-            
+
           });
           router.push("/");
     }
 
    
 
-    if (!user){
-        router.push("/");
-        return <div>Sign in to continue...</div>
+    // if (!user){
+    //     router.push("/");
+    //     return <div>Sign in to continue...</div>
 
-    }
+    // }
 
   return(
     <div className = "flex-col px-44">
